@@ -71,7 +71,8 @@ public class Sketch extends PApplet {
       // Check Collision
       for (int intSnowFlake = 0; intSnowFlake < fltSnowX.length - 1; intSnowFlake++) {
         // Player Collision
-        if (abs(dist(intPlayerX, intPlayerY, fltSnowX[intSnowFlake], fltSnowY[intSnowFlake])) < fltSnowDiameter[intSnowFlake] / 2 && fltSnowDiameter[intSnowFlake] != 0) {
+        if (abs(dist(intPlayerX, intPlayerY, fltSnowX[intSnowFlake],
+            fltSnowY[intSnowFlake])) < fltSnowDiameter[intSnowFlake] / 2 && fltSnowDiameter[intSnowFlake] != 0) {
           fltSnowDiameter[intSnowFlake] = 0;
           intLives--;
           if (intLives <= 0) {
@@ -133,12 +134,11 @@ public class Sketch extends PApplet {
   public void mouseClicked() {
     // Mouse Collision
     for (int intSnowFlake = 0; intSnowFlake < fltSnowX.length; intSnowFlake++) {
-      if (abs(dist(mouseX, mouseY, fltSnowX[intSnowFlake], fltSnowY[intSnowFlake])) < fltSnowDiameter[intSnowFlake] / 2) {
+      if (abs(dist(mouseX, mouseY, fltSnowX[intSnowFlake], fltSnowY[intSnowFlake])) < fltSnowDiameter[intSnowFlake]
+          / 2) {
         fltSnowDiameter[intSnowFlake] = 0;
       }
-
     }
-
   }
 
   /**
@@ -148,7 +148,7 @@ public class Sketch extends PApplet {
   public void drawLives() {
     for (int intDrawnLives = 0; intDrawnLives < intLives; intDrawnLives++) {
       fill(255, 0, 0);
-      square((float)25 * intDrawnLives + 20, (float)20, (float) 20);
+      square((float) 25 * intDrawnLives + 20, (float) 20, (float) 20);
     }
   }
 
@@ -159,5 +159,4 @@ public class Sketch extends PApplet {
   public void keyReleased() {
     intSpeed = 2;
   }
-
 }
