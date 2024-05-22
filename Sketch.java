@@ -72,7 +72,7 @@ public class Sketch extends PApplet {
       for (int intSnowFlake = 0; intSnowFlake < fltSnowX.length - 1; intSnowFlake++) {
         // Player Collision
         if (abs(dist(intPlayerX, intPlayerY, fltSnowX[intSnowFlake],
-            fltSnowY[intSnowFlake])) < fltSnowDiameter[intSnowFlake] / 2 && fltSnowDiameter[intSnowFlake] != 0) {
+            fltSnowY[intSnowFlake])) < 15 && fltSnowDiameter[intSnowFlake] != 0) {
           fltSnowDiameter[intSnowFlake] = 0;
           intLives--;
           if (intLives <= 0) {
@@ -86,7 +86,7 @@ public class Sketch extends PApplet {
   }
 
   /**
-   * @description Kills Player, and shows Game Oveer
+   * @description Kills Player, and shows Game Over
    * @author Joel Menezes
    */
   public void kill() {
